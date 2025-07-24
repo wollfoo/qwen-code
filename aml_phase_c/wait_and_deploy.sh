@@ -3,7 +3,7 @@ set -euo pipefail
 RG=rg-llm
 WS=ws-kimi
 ENV_NAME=qwen-vllm-env
-ENV_VER=1
+ENV_VER=3
 ENDPOINT=qwen480b-endpoint
 DEPLOY_FILE=deployment.yml
 
@@ -17,6 +17,9 @@ while true; do
   fi
   sleep 60
 done
+
+# Ensure endpoint exists
+az ml online-endpoint show -n $ENDPOINT -g $RG -w $WS >/dev/null 2>&1 || az ml online-endpoint create -f endpoint.yml -g $RG -w $WS
 
 echo "Creating deployment..."
 az ml online-deployment create -f $DEPLOY_FILE -g $RG -w $WS
