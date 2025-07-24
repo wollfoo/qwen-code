@@ -3,7 +3,7 @@ set -euo pipefail
 RG=rg-llm
 WS=ws-kimi
 ENV_NAME=qwen-vllm-env
-ENV_VER=3
+ENV_VER=4
 ENDPOINT=qwen480b-endpoint
 DEPLOY_FILE=deployment.yml
 

@@ -5,7 +5,7 @@ RUN apt-get update -y \
     && ln -s /usr/bin/pip3 /usr/bin/pip \
     && pip install --upgrade pip \
     && pip install "torch==2.3.1+cu124" -f https://download.pytorch.org/whl/torch_stable.html \
-    && pip install vllm==0.9.0 flash-attn==2.5.8 transformers==4.41.2 safetensors==0.4.3 \
+    && pip install vllm==0.9.0 transformers==4.41.2 safetensors==0.4.3 \
     && pip install huggingface_hub azureml-mlflow requests flask \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 ENV HF_HOME=/mnt/models TRANSFORMERS_OFFLINE=1
