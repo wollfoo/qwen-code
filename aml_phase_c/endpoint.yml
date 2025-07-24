@@ -1,0 +1,3 @@
+$schema: https://azuremlschemas.azureedge.net/latest/onlineEndpoint.schema.json
+name: qwen480b-endpoint
+auth_mode: key

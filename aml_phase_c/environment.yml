@@ -1,0 +1,4 @@
+$schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
+name: qwen-vllm-env
+version: 1
+image: <acr>.azurecr.io/qwen/vllm:0.9  # Thay <acr> bằng tên Azure Container Registry của bạn
