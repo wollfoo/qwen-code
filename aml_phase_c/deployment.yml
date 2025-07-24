@@ -7,7 +7,7 @@ code_configuration:
   code: ./src
   scoring_script: serve.py
 instance_type: Standard_NC48ads_A100_v4
-instance_count: 1
+instance_count: 2
 request_settings:
   request_timeout_ms: 900000
   max_concurrent_requests_per_instance: 4

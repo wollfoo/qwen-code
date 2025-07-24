@@ -6,10 +6,8 @@ WS=ws-kimi
 # 1. Create compute if not exists
 az ml compute show --name qwen480b-cluster -g $RG -w $WS >/dev/null 2>&1 || az ml compute create -f compute.yml -g $RG -w $WS
 
-# 2. Build docker image & push to ACR (assumes ACR login via az acr build)
-# Replace <acr> below before running first time
-# az acr build -t qwen/vllm:0.9 -r <acr> .
-# az ml environment create -f environment.yml -g $RG -w $WS
+# 2. Create or update AML Environment (builds image from Dockerfile)
+az ml environment create -f environment.yml -g $RG -w $WS
 
 # 3. Create endpoint if not exists
 az ml online-endpoint show -n qwen480b-endpoint -g $RG -w $WS >/dev/null 2>&1 || az ml online-endpoint create -f endpoint.yml -g $RG -w $WS

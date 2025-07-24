@@ -5,5 +5,5 @@ size: Standard_NC48ads_A100_v4  # 1×A100-80GB
 min_instances: 0
 max_instances: 2
 idle_time_before_scale_down: 600
-tier: Dedicated
-enable_node_public_ip: false
+tier: low_priority
+enable_node_public_ip: true
